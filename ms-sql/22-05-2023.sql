@@ -33,5 +33,5 @@ SELECT DISTINCT au_id from titleauthor
 INSERT INTO authors(au_id,au_lname,au_fname,phone,address,city,state,zip,contract)
 			 VALUES('99-55-7771','Mateus','Nezzi','535-523-2456','67 Rua Bondinho da Massa','2Fort','TF2','15326',1) --não sei porque não funciona
 
-UPDATE authors SET au_fname = 'Nezzi' WHERE au_id = '172-32-1176'; --altera o primeiro nome do autor para nezzi, o qual tem o id 172-32-1176
+UPDATE authors SET au_fname = 'Nezzi' WHERE au_id = '172-32-1176'; --altera o primeiro nome do autor (especificado pelo seu ID) para Nezzi
 
