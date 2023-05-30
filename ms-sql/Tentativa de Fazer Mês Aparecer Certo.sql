@@ -1,0 +1,17 @@
+
+SELECT hora_fato
+FROM TabelaGrande
+WHERE HORA_FATO BETWEEN '09 PM' AND '10 PM'
+AND HORA_FATO BETWEEN '05 PM' AND '06 PM';
+
+
+--Número de delegacias
+Select COUNT(DISTINCT ID_DELEGACIA) From TabelaGrande
+
+CAST(MES_ESTATISTICA AS NUMERIC)
+Select MES_ESTATISTICA, DATENAME(MONTH, MES_ESTATISTICA) as Mês,  count(*) as 'Ocorrências' From TabelaGrande
+group by MES_ESTATISTICA
+order by MES_ESTATISTICA
+
+
+ 
