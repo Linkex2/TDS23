@@ -58,7 +58,7 @@ public class OiMundo {
 		*/
 		
 	
-	
+	leia.close();
 	}
 	public static void pula()
 	{

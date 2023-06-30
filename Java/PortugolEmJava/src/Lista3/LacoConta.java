@@ -1,3 +1,4 @@
+package Lista3;
 public class LacoConta {
 	public static void main(String[] args)
 	{

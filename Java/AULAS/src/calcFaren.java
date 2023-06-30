@@ -7,5 +7,6 @@ public class calcFaren {
 		System.out.print("Escreva sua temperatura: C");
 		temp = read.nextInt();
 		System.out.printf("A temperatura em Faren é: "+(temp * 9/5) + 32 +"F");
+	read.close();
 	} 
 }
