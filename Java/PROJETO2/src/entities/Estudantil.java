@@ -1,7 +1,7 @@
 package entities;
-
+import java.util.Scanner;
 public class Estudantil extends Conta{
-
+	Scanner read = new Scanner(System.in);
 	private double limiteEstudantil = 5000.00;
 
 	public Estudantil(int numero, String cpf, double limiteEstudantil) {
@@ -24,15 +24,21 @@ public class Estudantil extends Conta{
 
 
 	public void usarEstudantil(){
-		if(this.limiteEstudantil > this.valor) 
+		
+		double valorEstudantil;
+		System.out.println("insira quanto vamos descontar.");
+		valorEstudantil = read.nextDouble();
+	
+		if(this.limiteEstudantil > valorEstudantil) 
 		{
-		(this.valor - this.limiteEstudantil;)
-		(this.valor + this.getSaldo();)
+
+		this.limiteEstudantil = (this.limiteEstudantil - valorEstudantil);
+		this.credito(valorEstudantil);
 		}
 		else
 		{
 			System.out.println("Limite excedido, tente denovo.");
-			
+			usarEstudantil();
 		}
 	}
 }
