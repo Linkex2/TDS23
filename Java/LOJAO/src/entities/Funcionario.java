@@ -1,17 +1,16 @@
 package entities;
 
-public class Funcionario extends Cliente{
+public class Funcionario{
 
+	private String nome;
 	private String matricula;
-	private String funcao;
 	private double valorHora;
 	private int horasTrabalhadas;
 	
-	public Funcionario(String cpf, String nome, int anoNascimento, String matricula, String funcao, double valorHora,
+	public Funcionario(String nome, String matricula, double valorHora,
 			int horasTrabalhadas) {
-		super(cpf, nome, anoNascimento);
+		this.nome = nome;
 		this.matricula = matricula;
-		this.funcao = funcao;
 		this.valorHora = valorHora;
 		this.horasTrabalhadas = horasTrabalhadas;
 	}
@@ -22,14 +21,6 @@ public class Funcionario extends Cliente{
 
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
-	}
-
-	public String getFuncao() {
-		return funcao;
-	}
-
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
 	}
 
 	public double getValorHora() {
@@ -47,7 +38,18 @@ public class Funcionario extends Cliente{
 	public void setHorasTrabalhadas(int horasTrabalhadas) {
 		this.horasTrabalhadas = horasTrabalhadas;
 	}
+	 
+	public double retornarSalario() {
+		this.gethorasTrabalhadas * this.valorHora
+	}
 	
-	
+	@Override
+	public String toString() {
+		return "matricula: " + matricula
+				+ "\nnome=" + nome
+				+ "\nvalorHora=" + valorHora
+				+ "\nhorasTrabalhadas=" + horasTrabalhadas
+				+ "\nretornarSalario()=" + retornarSalario();
+	}
 
 }

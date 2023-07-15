@@ -62,23 +62,30 @@ public abstract class Conta {
 		this.ativo = true;
 	}
 	public void debito(double saldoF) {
-		if(this.saldo >= 0) {
+		if(this.saldo <= 0) 
+		{
+			System.out.println("Coloque um valor válido.");
+		}
+		else if(this.saldo < saldoF)
+			{
+				System.out.println("Valor excedente, tente denovo.");
+			}
+		{
 		this.saldo = this.saldo - saldoF;
 		}
-		else
-		{
-			System.out.println("Coloque um valor válido");
-		}
+		
 	}
 	public void credito(double saldoF) {
 
-		if(saldoF >= 0) {
-		this.saldo = this.saldo + saldoF;
+		if(saldoF <= 0) 
+		{
+			System.out.println("Coloque um valor válido.");
 		}
 		else
 		{
-			System.out.println("Coloque um valor válido");
+		this.saldo = this.saldo + saldoF;
 		}
+
 	}
 	
 }

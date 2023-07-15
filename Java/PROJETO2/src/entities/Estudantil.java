@@ -27,9 +27,17 @@ public class Estudantil extends Conta{
 	
 		if(this.limiteEstudantil <= 0) 
 		{
-			System.out.println("Limite excedido, tente denovo.");
+			System.out.println("Limite excedido, tente novamente.");
 		}
-		else
+		else if(valorEstudantil > this.limiteEstudantil)
+			{
+				System.out.println("Valor acima do limite, tente novamente");
+			}
+		
+			else if(valorEstudantil < 0)
+				{
+					System.out.println("Valor negativo, tente novamente");
+				}
 		{
 
 		this.limiteEstudantil = (this.limiteEstudantil - valorEstudantil);
