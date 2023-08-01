@@ -1,6 +1,7 @@
 
 public class CD {
 
+	private int codigo;
 	private String artista;
 	private int numeroFaixa;
 	private String gravadora;
@@ -10,13 +11,24 @@ public class CD {
 
 	}
 
-	public CD(String artista, int numeroFaixa, String gravadora) {
+	public CD(int codigo, String artista, int numeroFaixa, String gravadora) {
 		super();
+		this.codigo = codigo;
 		this.artista = artista;
 		this.numeroFaixa = numeroFaixa;
 		this.gravadora = gravadora;
 	}
 	
+	
+	
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
 	public String getArtista() {
 		return artista;
 	}
@@ -47,7 +59,10 @@ public class CD {
 
 	@Override
 	public String toString() {
-		return "CD [artista=" + artista + ", numeroFaixa=" + numeroFaixa + ", gravadora=" + gravadora + "]";
+		return "CD [codigo=" + codigo + ", artista=" + artista + ", numeroFaixa=" + numeroFaixa + ", gravadora="
+				+ gravadora + ", titulo=" + titulo + "]";
 	}
+
+
 
 }
