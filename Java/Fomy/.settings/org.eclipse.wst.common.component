@@ -2,10 +2,9 @@
     <wb-module deploy-name="Fomy">
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/br.com.biblioteca"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/br.com.biblioteca.conexao"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/br.com.biblioteca.dao"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/br.com.item"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/br.com.entidade"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/br.com.dao"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/br.com.servlet"/>
         <property name="context-root" value="Fomy"/>
         <property name="java-output-path" value="/Fomy/build/classes"/>
     </wb-module>

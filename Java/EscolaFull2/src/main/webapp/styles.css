@@ -1,0 +1,96 @@
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #7EB77F;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        tr {
+			margin-left: 200px;
+		}
+
+        nav {
+            background-color: #333333;
+            color: white;
+            padding: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            background-color: #555555;
+        }
+        
+        div {
+            padding: 20px;
+            text-align: center;
+		}
+		
+		tr {
+			float: left;
+			padding-right: 100px;		}
+		
+		th {
+			  content: "";
+			  clear: both;
+		}
+		
+		form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+		
+		label {
+			padding: 20px;
+			
+		}
+		
+		input {
+			text-align: center;
+		}
+		
+		.telefone {
+			margin-left: -16px;
+		}
+		
+		.data {
+			margin-left: 11px;
+		}
+		
+        .bob {
+			display: block;
+  			margin-left: auto;
+  			margin-right: auto;
+		}
+		
+        .selected {
+			color:black;
+			background-color:white;
+		}
+
+		.pepperoni {
+			display: block;
+			text-align: right;
+			font-size: 10px;
+		}
+		
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #7EB77F;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
