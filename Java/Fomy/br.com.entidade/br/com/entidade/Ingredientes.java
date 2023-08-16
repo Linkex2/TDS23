@@ -2,12 +2,12 @@ package br.com.entidade;
 
 
 public class Ingredientes {
-	private int codIngrediente;
+	private int idIngrediente;
 	private String Nome;
 	
-	public Ingredientes(int codIngrediente, String nome) {
+	public Ingredientes(int idIngrediente, String nome) {
 		super();
-		this.codIngrediente = codIngrediente;
+		this.idIngrediente = idIngrediente;
 		Nome = nome;
 	}
 	
@@ -15,11 +15,11 @@ public class Ingredientes {
 		
 	}
 	
-	public int getCodIngrediente() {
-		return codIngrediente;
+	public int getIdIngrediente() {
+		return idIngrediente;
 	}
-	public void setCodIngrediente(int codIngrediente) {
-		this.codIngrediente = codIngrediente;
+	public void setIdIngrediente(int idIngrediente) {
+		this.idIngrediente = idIngrediente;
 	}
 	public String getNome() {
 		return Nome;
@@ -29,7 +29,7 @@ public class Ingredientes {
 	}
 	@Override
 	public String toString() {
-		return "Ingredientes [codIngrediente=" + codIngrediente + ", Nome=" + Nome + "]";
+		return "Ingredientes [idIngrediente=" + idIngrediente + ", Nome=" + Nome + "]";
 	}
 
 }
