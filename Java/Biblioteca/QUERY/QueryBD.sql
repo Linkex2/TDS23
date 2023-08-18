@@ -11,8 +11,8 @@ editora VARCHAR (50) NOT NULL,
 numeroPa INT NOT NULL)
 
 CREATE TABLE cd
-(codLivro int not null PRIMARY KEY IDENTITY,
+(codCd int not null PRIMARY KEY IDENTITY,
 titulo VARCHAR (50) NOT NULL,
-autor VARCHAR (50) NOT NULL,
-editora VARCHAR (50) NOT NULL,
-numeroPa INT NOT NULL)
+artista VARCHAR (50) NOT NULL,
+gravadora VARCHAR (50) NOT NULL,
+numeroFaixa INT NOT NULL)
