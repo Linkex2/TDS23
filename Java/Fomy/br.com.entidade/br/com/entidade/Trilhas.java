@@ -11,8 +11,12 @@ public class Trilhas {
 		super();
 		this.idTrilha = idTrilha;
 		this.nomeTrilha = nomeTrilha;
+	
 	}
 
+	public Trilhas() {
+		
+	}
 
 	public int getIdTrilha() {
 		return idTrilha;

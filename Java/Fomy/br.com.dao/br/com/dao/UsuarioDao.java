@@ -16,7 +16,7 @@ public void alterar(Usuario usuario) {
 try {
 Connection conexao = getConnection();
 
-PreparedStatement pstmt = conexao.prepareStatement("update Usuarios set Email = ?, Nome = ?, Senha = ?, dataCadastro = ? where IdUsuario = ?");
+PreparedStatement pstmt = conexao.prepareStatement("update Usuarios set Email = ?, Nome = ?, Senha = ? where IdUsuario = ?");
 pstmt.setString(1, usuario.getEmail());
 pstmt.setString(2, usuario.getNome());
 pstmt.setString(3, usuario.getSenha());
@@ -31,6 +31,26 @@ catch(Exception e) {
 e.printStackTrace();
 }
 }
+
+public void alterarFoto(Usuario usuario) {
+	
+try {
+Connection conexao = getConnection();
+
+PreparedStatement pstmt = conexao.prepareStatement("update Usuarios set Foto = ? where IdUsuario = ?");
+pstmt.setString(1, usuario.getFoto());
+pstmt.setInt(2, usuario.getIdUsuario());
+
+pstmt.execute();
+pstmt.close();
+conexao.close();
+}
+
+catch(Exception e) {
+e.printStackTrace();
+}
+}
+
 
 public void excluir(Usuario usuario) {
 try {
