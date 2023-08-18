@@ -59,7 +59,7 @@ public class Livro extends Itens{
 
     @Override
     public String toString() {
-        return "Livro{" + "autor=" + autor + ", editora=" + editora + ", numeroPaginas=" + numeroPaginas + '}';
+        return super.toString() + "\nAutor: " + getAutor() + "\nEditora: " + getEditora() + "\nNumero paginas: " + getNumeroPaginas()+"";
     }
 
   
