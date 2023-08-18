@@ -52,10 +52,13 @@ public class Principal {
                         System.out.println("Cadastro de CD");
                         System.out.println("Digite o Titulo do Cd");
                         cd.setTitulo(en.next());
+                        
                         System.out.println("Digite o artista do Cd");
                         cd.setArtista(en.next());
+                        
                         System.out.println("Digite o numero da faixa");
                         cd.setNumeroFaixa(en.nextInt());
+                        
                         System.out.println("Digite o nome da Gravadora");
                         cd.setGravadora(en.next());
                         
