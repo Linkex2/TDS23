@@ -15,7 +15,7 @@ public void alterar(Receitas receita) {
 try {
 Connection conexao = getConnection();
 
-PreparedStatement pstmt = conexao.prepareStatement("update Receitas set nome = ?, telefone = ?, email = ?, dataCadastro = ? where matricula = ?");
+PreparedStatement pstmt = conexao.prepareStatement("update Receitas set Nome = ?, Descricao = ?, ImagemThumb = ?, Imagem = ?, Experiencia = ?, Valor = ? where IdReceita = ?");
 pstmt.setString(1, receita.getNome());
 pstmt.setString(2, receita.getDescricao());
 pstmt.setString(3, receita.getImagemThumb());
@@ -33,12 +33,12 @@ e.printStackTrace();
 }
 }
 
-public void excluir(Aluno aluno) {
+public void excluir(Receitas receita) {
 try {
 Connection conexao = getConnection();
 
-PreparedStatement pstm = conexao.prepareStatement("delete from tbaluno where matricula = ?");
-pstm.setLong(1, aluno.getMatricula());
+PreparedStatement pstm = conexao.prepareStatement("delete from Receitas where IdReceita = ?");
+pstm.setLong(1, receita.getIdReceita());
 pstm.execute();
 pstm.close();
 conexao.close();
@@ -49,13 +49,13 @@ e.printStackTrace();
 }
 }
 
-public boolean existe(Aluno aluno) {
+public boolean existe(Receitas receita) {
 boolean achou = false;
 try {
 Connection conexao = getConnection();
 
-PreparedStatement pstm = conexao.prepareStatement("select * from tbaluno where matricula = ?");
-pstm.setLong(1, aluno.getMatricula());
+PreparedStatement pstm = conexao.prepareStatement("select * from Receitas where IdReceita = ?");
+pstm.setLong(1, receita.getIdReceita());
 ResultSet rs = pstm.executeQuery();
 if(rs.next()) {
 achou = true;
@@ -71,16 +71,17 @@ e.printStackTrace();
 return achou;
 }
 
-public void inserir(Aluno aluno) {
+public void inserir(Receitas receita) {
 try {
 Connection conexao = getConnection();
 
-PreparedStatement pstm = conexao.prepareStatement("insert into tbaluno values (?, ?, ?, ?, ?)");
-pstm.setLong(1, aluno.getMatricula());
-pstm.setString(2, aluno.getNome());
-pstm.setString(3, aluno.getTelefone());
-pstm.setString(4, aluno.getEmail());
-pstm.setDate(5, new java.sql.Date(aluno.getDataCadastro().getTime()));
+PreparedStatement pstm = conexao.prepareStatement("insert into Receitas values (?, ?, ?, ?, ?, ?)");
+pstm.setString(1, receita.getNome());
+pstm.setString(2, receita.getDescricao());
+pstm.setString(3, receita.getImagemThumb());
+pstm.setString(4, receita.getImagem());
+pstm.setInt(5, receita.getExperiencia());
+pstm.setInt(6, receita.getValor());
 pstm.execute();
 pstm.close();
 conexao.close();
@@ -91,20 +92,22 @@ e.printStackTrace();
 }
 }
 
-public List<Aluno> listar() {
-List<Aluno> lista = new ArrayList<>();
+public List<Receitas> listar() {
+List<Receitas> lista = new ArrayList<>();
 try {
 Connection conexao = getConnection();
 
 Statement stm = conexao.createStatement();
-ResultSet rs = stm.executeQuery("select * from tbaluno");
+ResultSet rs = stm.executeQuery("select * from Receitas");
 while(rs.next()) {
-Aluno aluno = new Aluno();
-aluno.setMatricula(rs.getLong("matricula"));
-aluno.setNome(rs.getString("nome"));
-aluno.setTelefone(rs.getString("telefone"));
-aluno.setEmail(rs.getString("email"));
-aluno.setDataCadastro(new java.sql.Date(rs.getDate("dataCadastro").getTime()));
+Receitas aluno = new Receitas();
+aluno.setIdReceita(rs.getInt("Receita"));
+aluno.setNome(rs.getString("Nome"));
+aluno.setDescricao(rs.getString("Descricacao"));
+aluno.setImagemThumb(rs.getString("ImagemThumb"));
+aluno.setImagem(rs.getString("Imagem"));
+aluno.setExperiencia(rs.getInt("Experiencia"));
+aluno.setValor(rs.getInt("Valor"));
 lista.add(aluno);
 }
 stm.close();
