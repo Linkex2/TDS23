@@ -57,9 +57,10 @@ public class ClienteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String action = request.getServletPath();
 		
-		try {
+		/*String action = request.getServletPath();
+		
+	  	 try {
 		 switch (action) {
 		 case "/new":
 			 showNewForm(request,response);
@@ -73,11 +74,11 @@ public class ClienteServlet extends HttpServlet {
 			 deleteUser(request,response);
 			 break;
 			 
-		 case "/edit":
+		/* case "/edit":
 			 showEditForm(request,response);
 			 break;
-
-		 case "/update":
+		*/
+		/* case "/update":
 			 updateUser(request,response);
 			 break;
 			 
@@ -86,16 +87,16 @@ public class ClienteServlet extends HttpServlet {
 		 }
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
-		}
+		}*/
 	}
 
-	private void listUser (HttpServletRequest request, HttpServletResponse response)
+    /* private void listUser (HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Usuario> listUser = usuariodao1.selectAllUsers();
 		request.setAttribute("listUser", listUser);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
 		dispatcher.forward(request, response);
-	}
+	}*/
 	
 	private void showNewForm (HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
@@ -103,16 +104,16 @@ public class ClienteServlet extends HttpServlet {
 	dispatcher.forward(request, response);
 	}
 	
-	private void showEditForm (HttpServletRequest request, HttpServletResponse response)
+	/*private void showEditForm (HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Usuario existingUser = usuariodao1.selectUser(id);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
 		request.setAttribute("user", existingUser);
 		dispatcher.forward(request, response);
-	}
+	}*/
 
-	private void insertUser (HttpServletRequest request, HttpServletResponse response)
+	/*private void insertUser (HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException{
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
@@ -121,7 +122,7 @@ public class ClienteServlet extends HttpServlet {
 		
 		usuariodao1.insertUser(newUser);
 		response.sendRedirect("list");
-	}
+	}*/
 
 	private void updateUser (HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException{
